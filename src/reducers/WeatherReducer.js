@@ -16,8 +16,12 @@ export default function(state = null, action){ //item 1,3 & 4
 		case "GET_WEATHER":
 			//do some stuff
 			console.log(action);
+			return action.payload;
+			break;
 		case "GET_STOCKS":
 			// do some other stuff
+			return state;
+			break;
 		default:
 			// If neither case happens, do this
 			return state;

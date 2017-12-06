@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 // connect is teh GLUE between react and redux
 import {connect} from 'react-redux';
 import FetchWeather from '../actions/fetchWeather';
+import FetchStocks from '../actions/fetchStock';
 import  {bindActionCreators} from 'redux';
+
 
 class SearchBar extends Component{
 	constructor(){
@@ -21,6 +23,8 @@ class SearchBar extends Component{
 	handleStocks(event){
 		event.preventDefault();
 		console.log("Someone submitted a stock");
+		const stockSymbol = document.getElementById('stock-input').value;
+		this.props.fetchStocks(stockSymbol)
 	}
 
 	render(){
@@ -57,7 +61,8 @@ class SearchBar extends Component{
 // This is a function sent to connect. Connect will run it later
 function mapDispatchToProps(dispatch){
 	return bindActionCreators({
-		fetchWeather: FetchWeather
+		fetchWeather: FetchWeather,
+		fetchStocks: FetchStocks
 	}, dispatch)
 }
 

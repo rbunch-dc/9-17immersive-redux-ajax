@@ -7,9 +7,11 @@
 
 import { combineReducers } from 'redux' //Item 1.
 import WeatherReducer from './WeatherReducer';
+import StocksReducer from './StocksReducer';
 
 const rootReducer = combineReducers({ // item 2
 	weather: WeatherReducer, // 3 & 4
+	stocks: StocksReducer
 })
 
  export default rootReducer;
