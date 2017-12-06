@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import FetchWeather from '../actions/fetchWeather';
 import FetchStocks from '../actions/fetchStock';
-import  {bindActionCreators} from 'redux';
+import {bindActionCreators} from 'redux';
 
 
 class SearchBar extends Component{

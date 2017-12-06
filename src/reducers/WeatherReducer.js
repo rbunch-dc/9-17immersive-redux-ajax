@@ -18,10 +18,18 @@ export default function(state = null, action){ //item 1,3 & 4
 			console.log(action);
 			return action.payload;
 			break;
-		case "GET_STOCKS":
-			// do some other stuff
-			return state;
-			break;
+		case "BAD_DATA":
+			return {
+				msg: "Please enter a valid zip code",
+				code: 500
+			}
+		case "CLEAR_WEATHER":
+		// 	// do some other stuff
+			return null;
+		// 	return state;
+		// 	break;
+		case "EDIT_WEATHER":
+			return null;
 		default:
 			// If neither case happens, do this
 			return state;

@@ -9,6 +9,10 @@ class Weather extends Component{
 			return(
 				<h1>Please search above</h1>
 			)
+		}else if(this.props.weatherData.code === 500){
+			return(
+				<h1>{this.props.weatherData.msg}</h1>
+			)
 		}else{
 			const weatherInfo = this.props.weatherData.data;
 			const temp = weatherInfo.main.temp;

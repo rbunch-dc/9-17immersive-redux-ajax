@@ -10,10 +10,28 @@ class Stocks extends Component{
 				<h1>Please search for a stock above.</h1>
 			)
 		}else{
-			console.log(this.props.stockData['Meta Data']);
-			const stockData = this.props.stockData.data['Meta Data'];
+			console.log(this.props.stockData.data['Time Series (1min)']);
+			const stockData = this.props.stockData.data['Time Series (1min)'];
+			var stockDataArray = []
+			var count = 0;
+			for(var key in stockData){
+				if(count == 1){
+					break;
+				}
+				var count2 = 0;
+				for(var key2 in stockData[key]){
+					count2++;
+					stockDataArray.push(<p key2={key2}>{key2}:{stockData[key][key2]}</p>)
+					if(count2 == 5){
+						break;
+					}
+				}
+				count++;
+			}
 			return(
-				<h1>{stockData}</h1>
+				<div>
+					{stockDataArray}
+				</div>
 			)
 		}
 	}
