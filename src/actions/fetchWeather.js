@@ -7,6 +7,7 @@ function fetchWeather (zipCode){
 	console.log(zipCode);
 	const fullWeatherUrl = weatherUrl + zipCode;
 	const data = axios.get(fullWeatherUrl)
+	console.log(data);
 	return{
 		type:'GET_WEATHER',
 		payload: data
